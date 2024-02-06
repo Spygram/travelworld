@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'travelapp_db',
         'USER': 'postgres',
         'PASSWORD': 'helloworld',
-        'HOST': 'localhost'
+        'HOST': 'travel_db'
     }
 }
 

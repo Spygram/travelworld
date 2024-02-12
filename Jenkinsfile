@@ -10,26 +10,26 @@ pipeline {
             }
         }
 
-        // stage('Setup Environment') {
-        //     steps {
-        //         // Create a virtual environment if it doesn't exist and install dependencies
-        //         sh '''
-        //         if [ ! -d "venv" ]; then
-        //           python3 -m venv venv
-        //         fi
-        //         . venv/bin/activate
-        //         pip install -r requirements.txt
-        //         '''
-        //     }
-        // }
+        stage('Setup Environment') {
+            steps {
+                // Create a virtual environment if it doesn't exist and install dependencies
+                sh '''
+                if [ ! -d "venv" ]; then
+                  python3 -m venv venv
+                fi
+                . venv/bin/activate
+                pip install -r requirements.txt
+                '''
+            }
+        }
 
-        // stage('Run Migrations') {
-        //     steps {
-        //         // Run Django database migrations
-        //         source venv/bin/activate
-        //         python manage.py migrate
-        //     }
-        // }
+        stage('Run Migrations') {
+            steps {
+                // Run Django database migrations
+                source venv/bin/activate
+                python manage.py migrate
+            }
+        }
 
         // stage('Publish results') {
         //     steps {

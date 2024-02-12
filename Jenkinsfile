@@ -6,7 +6,7 @@ pipeline {
             steps {
                 // Check out the source code from the Git repository
                 checkout scm
-                echo 'github auth was successfull'
+                echo 'GITHUB Auth Was Successfull'
             }
         }
 

@@ -26,8 +26,8 @@ pipeline {
         stage('Run Migrations') {
             steps {
                 // Run Django database migrations
-                source venv/bin/activate
-                python manage.py migrate
+                sh 'source venv/bin/activate'
+                sh 'python manage.py migrate'
             }
         }
 

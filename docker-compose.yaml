@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  webapp:
+    image: spygram/travel_world:latest
+    build:
+      context: '.'
+      dockerfile: Dockerfile
+    ports:
+      - 8081:8000
+    depends_on: 
+      - postgres
+
+  postgres:
+    image: postgres:latest  # Use the official Postgres image
+    environment:
+      POSTGRES_USER: postgres  # Username for the Postgres database
+      POSTGRES_PASSWORD: postgres  # Password for the Postgres user (**Use a strong password!**)
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Persistent storage for Postgres data
+
+volumes:
+  postgres_data:  # Define the volume for persisting data
+    

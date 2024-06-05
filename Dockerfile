@@ -14,7 +14,8 @@ COPY entrypoint.sh /app/entrypoint.sh
 
 # Make the entrypoint script executable
 RUN chmod +x /app/entrypoint.sh
-
+ENTRYPOINT ["/app/entrypoint.sh"]
+RUN ls -l /app/entrypoint.sh
 # Copy the current directory contents into the container at /code
 COPY . .
 

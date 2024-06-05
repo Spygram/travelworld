@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'telusko.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'travelapp_db',
+        'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': 'helloworld',
+        'PASSWORD': 'postgres',
         'HOST': 'travel_db'
     }
 }
